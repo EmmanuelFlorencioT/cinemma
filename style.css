@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    background-color: lightslategray;
+}
+
+.movie-overview {
+    background-color: darkcyan;
+    height: 80vh;
+}
+
+.latest-movie {
+    height: 30%;
+    background-color: aquamarine;
+    padding: 0;
+    border-radius: 12px;
+}
+
+.movie-list {
+    height: 55%;
+    background-color: aquamarine;
+}
+
+.movie {
+    background-color: blue;
+    height: 120px;
+    color: white;
+    border-radius: 12px;
+}
