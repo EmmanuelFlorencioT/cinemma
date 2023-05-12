@@ -13,7 +13,7 @@
     <nav class="navbar bg-danger" data-bs-theme="dark">
         <div class="container-fluid">
           <!--Placeholder for the logo image-->
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <img src="./assets/logo-placeholder.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
             Cinemma
           </a>

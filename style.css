@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: lightslategray;
+    background-color: rgb(187, 192, 197);
 }
 
 /*----- index.html styling -----*/
@@ -108,5 +108,70 @@ body {
     .right-section {
         height: max-content;
         padding: 0 30px 0 30px;
+    }
+}
+
+/* -- Seats style -- */
+.top-section{
+    width: 100%;
+    height: 30vh;
+    background-color: aliceblue;
+}
+
+.seat-array{
+    width: 500px;
+    height: 480px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 40px;
+}
+
+.screen{
+    width: 100%;
+    background-color: gray;
+    font-size: 0.6rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.seat-row{
+    width: 100%;
+    height: 75px;
+    /* background-color: lightskyblue; */
+    margin: 5px 0;
+    padding: 0 15px;
+    display: flex;
+}
+
+.seat{
+    width: 100%;
+    height: 100%;
+    /* background-color: blue; */
+    text-align: center;
+    margin: 0 3px;
+    background-image: url(./assets/chair.png);
+    background-size: 100% auto;
+    border-radius: 30%;
+}
+
+.seat-label{
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px){
+    .top-section{
+        height: 20vh;
+    }
+    
+    .seat-array{
+        width: 300px;
+        height: 300px;
+    }
+
+    .screen{
+        height: 10px;
+        margin-bottom: 20px;
     }
 }

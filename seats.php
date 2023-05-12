@@ -13,7 +13,7 @@
     <nav class="navbar bg-danger" data-bs-theme="dark">
         <div class="container-fluid">
           <!--Placeholder for the logo image-->
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="index.php">
             <img src="./assets/logo-placeholder.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
             Cinemma
           </a>
@@ -26,5 +26,23 @@
         </div>
     </nav>
 
+    <div class="top-section">
+
+    </div>
+
+    <div class="seat-array">
+      <div class="screen">screen</div>
+      <?php 
+        $rows = array("A", "B", "C", "D", "E", "F");
+        
+        foreach($rows as $row){
+          echo "<div class='seat-row'>";
+            for($i = 1; $i < 7; $i++){
+              echo "<div class='seat' id='" .$row.$i. "'><p class='seat-label'>" .$row.$i. "</p></div>";
+            }
+          echo "</div>";
+        }
+      ?>
+    </div>
 </body>
 </html>
