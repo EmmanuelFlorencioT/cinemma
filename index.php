@@ -32,7 +32,7 @@
         </div>
 
         <div class="row mt-4 movie-list text-center">
-            <div class="col-md-3 col-sm-4"><div class="movie"><a href="movie.html">Movie A</a></div></div>
+            <div class="col-md-3 col-sm-4"><div class="movie"><a href="movie.php">Movie A</a></div></div>
             <div class="col-md-3 col-sm-4"><div class="movie">Movie B</div></div>
             <div class="col-md-3 col-sm-4"><div class="movie">Movie C</div></div>
             <div class="col-md-3 col-sm-4"><div class="movie">Movie D</div></div>
