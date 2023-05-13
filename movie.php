@@ -22,26 +22,38 @@
         </div>
     </nav>
 
-    <div class="row movie-page">
-      <div class="col-lg-4 left-section">
-        <div class="poster-container"><img src="assets/movie-poster.jpg" alt="Movie Posters" class="movie-poster"></div>
-      </div>
-
-      <div class="col-lg-8 right-section">
-        <h1>Movie A</h1>
-        <p><span class="movie-attrib">Título Original: </span>Lorem ipsum.</p>
-
-        <h2>Sinopsis</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus exercitationem enim aliquam, quidem iure eaque hic fugit eveniet possimus quisquam dolore dignissimos, deserunt laborum incidunt sequi facere blanditiis! Quidem, accusamus.</p>
-
-        <p><span class="movie-attrib">Fecha de Estreno: </span>Lorem ipsum.</p>
-
-        <div class="container-fluid movie-times">
-          <button type="button" class="btn btn-outline-light">13:00</button>
-          <button type="button" class="btn btn-outline-light">15:45</button>
+    <div>
+      <div class="row movie-page">
+        <div class="col-lg-4 left-section">
+          <div class="poster-container"><img src="assets/movie-poster.jpg" alt="Movie Posters" class="movie-poster"></div>
         </div>
-
+  
+        <div class="col-lg-8 right-section">
+          <h1>Movie A</h1>
+          <p><span class="movie-attrib">Título Original: </span>Lorem ipsum.</p>
+  
+          <h2>Sinopsis</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus exercitationem enim aliquam, quidem iure eaque hic fugit eveniet possimus quisquam dolore dignissimos, deserunt laborum incidunt sequi facere blanditiis! Quidem, accusamus.</p>
+  
+          <p><span class="movie-attrib">Fecha de Estreno: </span>Lorem ipsum.</p>
+  
+          <div class="container-fluid movie-times">
+            <button type="button" class="btn btn-outline-light">13:00</button>
+            <button type="button" class="btn btn-outline-light">15:45</button>
+          </div>
+  
+        </div>
       </div>
     </div>
+
+    <footer>
+      <div class="container disclaimer">
+        <a href="https://www.themoviedb.org">
+          <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg" alt="The Movie Database Logo">
+        </a>
+        <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+      </div>  
+    </footer>
+
 </body>
 </html>
