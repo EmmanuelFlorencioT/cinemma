@@ -6,11 +6,10 @@
 
     $curl = curl_init();
 
-    $acc_id = $_ENV['ACC_ID'];
     $api_key = $_ENV['API_KEY'];
 
     curl_setopt_array($curl, [
-        CURLOPT_URL => "https://api.themoviedb.org/3/account/".$acc_id."/favorite/movies?language=en-US",
+    CURLOPT_URL => "https://api.themoviedb.org/3/authentication",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
