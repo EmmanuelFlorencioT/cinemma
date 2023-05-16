@@ -1,3 +1,8 @@
+<?php
+  require "./connect_tmdb.php";
+  $movies = json_decode($respMovies, true);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,14 +33,22 @@
 
     <div class="container-fluid flex-column movie-overview pt-4">
         <div class="container latest-movie">
-            Latest Movie
+          Latest Movie
         </div>
 
         <div class="row mt-4 movie-list text-center">
-            <div class="col-md-3 col-sm-4"><div class="movie"><a href="movie.php">Movie A</a></div></div>
-            <div class="col-md-3 col-sm-4"><div class="movie">Movie B</div></div>
-            <div class="col-md-3 col-sm-4"><div class="movie">Movie C</div></div>
-            <div class="col-md-3 col-sm-4"><div class="movie">Movie D</div></div>
+          <?php
+            foreach($movies["results"] as $movieItem){
+              echo "<div class='col-md-3 col-sm-4'>
+                  <a href='./search_movie.php?id=".$movieItem['id']."'>
+                    <div class='movie'>
+                    <img class='movie-poster' src='https://image.tmdb.org/t/p/w500".$movieItem['poster_path']."' alt='".$movieItem['original_title']."'>
+                    </div>
+                  </a>
+                </div>";
+            }
+          ?>
+            
         </div>
 
     </div>
