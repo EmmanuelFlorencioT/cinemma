@@ -1,16 +1,21 @@
 <?php
-    require '../vendor/autoload.php';
+    require './vendor/autoload.php';
 
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
 
+    if(!isset($_GET['id'])){
+        header("Location: http://localhost:5002/error.php");
+    }
+
+    $movieId = $_GET['id'];
+
     $curl = curl_init();
 
-    $acc_id = $_ENV['ACC_ID'];
     $api_key = $_ENV['API_KEY'];
 
     curl_setopt_array($curl, [
-        CURLOPT_URL => "https://api.themoviedb.org/3/account/".$acc_id."/favorite/movies?language=en-US",
+    CURLOPT_URL => "https://api.themoviedb.org/3/movie/".$movieId."?language=en-US",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
@@ -23,15 +28,8 @@
     ],
     ]);
 
-    $response = curl_exec($curl);
+    $movieInfo = curl_exec($curl);
     $err = curl_error($curl);
 
     curl_close($curl);
-
-    if ($err) {
-    echo "cURL Error #:" . $err;
-    } else {
-    echo $response;
-    }
-
 ?>

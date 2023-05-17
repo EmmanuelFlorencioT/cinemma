@@ -40,7 +40,7 @@
           <?php
             foreach($movies["results"] as $movieItem){
               echo "<div class='col-md-3 col-sm-4'>
-                  <a href='./search_movie.php?id=".$movieItem['id']."'>
+                  <a href='./movie.php?id=".$movieItem['id']."'>
                     <div class='movie'>
                     <img class='movie-poster' src='https://image.tmdb.org/t/p/w500".$movieItem['poster_path']."' alt='".$movieItem['original_title']."'>
                     </div>

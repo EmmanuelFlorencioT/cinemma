@@ -1,3 +1,9 @@
+<?php
+  require_once './search_movie.php';
+
+  $movie = json_decode($movieInfo, true);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css" type="text/css">
-    <title>Movie X</title>
+    <title><?php echo $movie['original_title']; ?></title>
 </head>
 <body>
     <nav class="navbar bg-danger" data-bs-theme="dark">
@@ -25,17 +31,31 @@
     <div>
       <div class="row movie-page">
         <div class="col-lg-4 left-section">
-          <div class="poster-container"><img src="assets/movie-poster.jpg" alt="Movie Posters" class="movie-poster"></div>
+          <div class="poster-container"><img src="<?php echo "https://image.tmdb.org/t/p/w500".$movie['poster_path']; ?>" alt="Movie Posters" class="movie-poster"></div>
         </div>
   
         <div class="col-lg-8 right-section">
-          <h1>Movie A</h1>
-          <p><span class="movie-attrib">Título Original: </span>Lorem ipsum.</p>
+          <h1><?php echo $movie['original_title']; ?></h1>
+          <h4><?php echo "\"".$movie['tagline']."\""; ?></h4>
+          <div class="genres">
+            <?php 
+              foreach($movie['genres'] as $genre){
+                echo "<div class='movie-genre'> ".$genre['name']." </div>";
+              }
+            ?>
+          </div>
   
-          <h2>Sinopsis</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus exercitationem enim aliquam, quidem iure eaque hic fugit eveniet possimus quisquam dolore dignissimos, deserunt laborum incidunt sequi facere blanditiis! Quidem, accusamus.</p>
+          <p class="overview-title">Overview</p>
+          <p><?php echo $movie['overview']; ?></p>
   
-          <p><span class="movie-attrib">Fecha de Estreno: </span>Lorem ipsum.</p>
+          <p>
+            <span class="movie-attrib">Release Date: </span>
+            <?php 
+              $date = date_create($movie['release_date']);
+              echo date_format($date, 'd M Y'); 
+            ?>
+          </p>
+          <p><span class="movie-attrib">Duration: </span><?php echo $movie['runtime']; ?> mins</p>
   
           <div class="container-fluid movie-times">
             <button type="button" class="btn btn-outline-light">13:00</button>

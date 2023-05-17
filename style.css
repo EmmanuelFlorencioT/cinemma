@@ -64,6 +64,11 @@ body {
 
 /*----- movie.html sytling -----*/
 
+.overview-title {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
 .movie-page {
     background-color: blueviolet;
     height: 80vh;
@@ -76,7 +81,7 @@ body {
 }
 
 .poster-container {
-    width: 230px;
+    max-width: fit-content;
     height: 340px;
     background-color: green;
     border-radius: 15px;
@@ -99,6 +104,19 @@ body {
 
 .movie-attrib {
     font-weight: bold;
+}
+
+.genres {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.movie-genre {
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    margin-right: 0.7rem;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .movie-times {
@@ -134,6 +152,15 @@ body {
     .right-section {
         height: max-content;
         padding: 0 30px 0 30px;
+    }
+
+    .genres {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .movie-genre {
+        margin-bottom: 4px;
     }
 }
 
