@@ -14,15 +14,13 @@
         <div class="container-fluid">
           <!--Placeholder for the logo image-->
           <a class="navbar-brand" href="index.php">
-            <img src="./assets/logo-placeholder.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-            Cinemma
+            <img src="./assets/mocklogo-cinemma.png" alt="Logo" width="28" height="28" class="d-inline-block align-text-top">
+            <span id="nav-cinemma">Cinemma</span>
           </a>
-          <form class="d-flex mx-auto" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-          </form>
           <!--Placeholder for the profile icon on the right-->
-          <img src="./assets/logo-placeholder.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+          <a href="signup.php">
+            <img src="./assets/profile.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+          </a>
         </div>
     </nav>
 

@@ -3,6 +3,12 @@ body {
     background-color: rgb(187, 192, 197);
 }
 
+#nav-cinemma {
+    color: black;
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+
 /*----- index.html styling -----*/
 
 .movie-overview {
@@ -227,4 +233,35 @@ body {
         height: 10px;
         margin-bottom: 20px;
     }
+}
+
+/* -- Sign Up Page -- */
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: #ffffff00;
+}
+
+.signup-container {
+    margin-top: 40px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.btn{
+    color: #000000;
+    background-color: #de2d40;
+    padding: 10px 15px;
+    border: solid #de2d40 2px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn:hover{
+    transition : 500ms;
+    padding: 10px 30px;
+    transform : translateY(-0px);
+    background-color: #ffffff00;
+    color: #de2d40;
+    border: solid 2px #de2d40;
 }
