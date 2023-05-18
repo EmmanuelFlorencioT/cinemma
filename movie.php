@@ -24,9 +24,15 @@
             <span id="nav-cinemma">Cinemma</span>
           </a>
           <!--Placeholder for the profile icon on the right-->
-          <a href="signup.php">
-            <img src="./assets/profile.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-          </a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              <img src="./assets/profile.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+            </button>
+              <div class="dropdown-content">
+                <a href="#">Log In</a>
+                <a href="./signup.php">Sign Up</a>
+              </div>
+          </div> 
         </div>
     </nav>
 

@@ -21,7 +21,7 @@
     </nav>
 
     <div class="container" style="padding-top: 5vh;">
-        <form action="authenticate" method="POST">
+        <form action="./insert_user.php" method="POST">
             <h2>Personal Information</h2>
             <hr>
             <div class="row mb-4">
@@ -34,8 +34,8 @@
                 <div class="col-md-6">
                     <label for="psswd">Password:</label><br>
                     <input type="password" name="psswd" id="psswd" required><br>
-                    <label for="psswd">Confirm Password:</label><br>
-                    <input type="password" name="psswd" id="psswd" required>
+                    <label for="conf-psswd">Confirm Password:</label><br>
+                    <input type="password" name="conf-psswd" id="conf-psswd" required>
                 </div>
             </div>
 
@@ -46,11 +46,11 @@
                     <label for="card-number">Card Number:</label><br>
                     <input type="text" name="card-number" maxlength="16" required><br>
                     <label for="card-expire">Card Expiration Date:</label><br>
-                    <input type="text" name="card-exprie" id="card-expire" required>
+                    <input type="text" name="card-expire" id="card-expire" required>
                 </div>
                 <div class="col-md-6">
                     <label for="card-cvc">Security Code (CVC):</label><br>
-                    <input type="password" name="card-cvc" id="card-cvc" maxlength="3" required><br>
+                    <input type="password" name="card-cvc" id="card-cvc" maxlength="4" required><br>
                 </div>
             </div>
             <div class="signup-container">
