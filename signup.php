@@ -17,10 +17,19 @@
             <img src="./assets/mocklogo-cinemma.png" alt="Logo" width="28" height="28" class="d-inline-block align-text-top">
             <span id="nav-cinemma">Cinemma</span>
           </a>
+
+          <div class="dropdown">
+            <button class="dropbtn">
+              <img src="./assets/profile.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+            </button>
+              <div class="dropdown-content">
+                <a href="./login.php">Log In</a>
+              </div>
+          </div> 
         </div>
     </nav>
 
-    <div class="container" style="padding-top: 5vh;">
+    <div class="signup-form">
         <form action="./insert_user.php" method="POST">
             <h2>Personal Information</h2>
             <hr>
@@ -53,7 +62,7 @@
                     <input type="password" name="card-cvc" id="card-cvc" maxlength="4" required><br>
                 </div>
             </div>
-            <div class="signup-container">
+            <div class="signup-btn-container">
                 <button class="btn" type="submit">Sign Up</button>
             </div>
         </form>

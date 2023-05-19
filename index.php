@@ -1,5 +1,7 @@
 <?php
   require "./connect_tmdb.php";
+  require "./session.php";
+
   $movies = json_decode($respMovies, true);
 ?>
 
@@ -28,8 +30,14 @@
               <img src="./assets/profile.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
             </button>
               <div class="dropdown-content">
-                <a href="#">Log In</a>
-                <a href="./signup.php">Sign Up</a>
+                <?php
+                  if(isLoggedIn()){
+                    echo "<a href='./logout.php'>Log Out</a>";
+                  } else {
+                    echo "<a href='./login.php'>Log In</a>
+                          <a href='./signup.php'>Sign Up</a>";
+                  }
+                ?>
               </div>
           </div> 
         </div>

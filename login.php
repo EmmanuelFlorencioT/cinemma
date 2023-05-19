@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css" type="text/css">
-    <title>Seats</title>
+    <title>Cinemma Log In</title>
 </head>
 <body>
     <nav class="navbar bg-danger" data-bs-theme="dark">
@@ -17,47 +17,31 @@
             <img src="./assets/mocklogo-cinemma.png" alt="Logo" width="28" height="28" class="d-inline-block align-text-top">
             <span id="nav-cinemma">Cinemma</span>
           </a>
-          <!--Placeholder for the profile icon on the right-->
+
           <div class="dropdown">
             <button class="dropbtn">
               <img src="./assets/profile.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
             </button>
               <div class="dropdown-content">
-                <!--There is no action to be done with the account while in purchase-->
+                <a href="./signup.php">Sign Up</a>
               </div>
           </div> 
         </div>
     </nav>
 
-    <div class="top-section">
-
+    <div class="login-form">
+        <form action="./auth_cinemma.php" method="POST">
+            <h2>Log In</h2>
+            <hr>    
+            <label for="mail">Email:</label><br>
+            <input type="email" name="mail" id="mail" required><br><br>
+            <label for="psswd">Password:</label><br>
+            <input type="password" name="psswd" id="psswd" required><br>
+            <div class="signup-btn-container">
+                <button class="btn" type="submit">Log In</button>
+            </div>
+        </form>
     </div>
-
-    <div class="mid-section">
-      <div class="seat-array">
-        <div class="screen">screen</div>
-        <?php 
-          $rows = array("A", "B", "C", "D", "E", "F");
-          
-          foreach($rows as $row){
-            echo "<div class='seat-row'>";
-              for($i = 1; $i < 7; $i++){
-                echo "<div class='seat' id='" .$row.$i. "'><p class='seat-label'>" .$row.$i. "</p></div>";
-              }
-            echo "</div>";
-          }
-        ?>
-      </div>
-    </div>
-
-    <footer>
-      <div class="container disclaimer">
-        <a href="https://www.themoviedb.org">
-          <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg" alt="The Movie Database Logo">
-        </a>
-        <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
-      </div>  
-
-    </footer>
+    
 </body>
 </html>
