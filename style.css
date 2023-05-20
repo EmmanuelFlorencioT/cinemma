@@ -326,6 +326,38 @@ input[type=text], input[type=email], input[type=password] {
     border-radius: 15px;
 }
 
+
+/* -- Modals -- */
+.modal-container{
+    position: fixed;
+    background-color: #00000056;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0 3s ease;
+}
+
+.modal-content {
+    width: 45vw;
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    padding: 33px 20px;
+}
+
+.no-click {
+    pointer-events: none;
+}
+
+.show {
+    opacity: 1;
+}
+
 @media screen and (max-width: 992px){
     .login-form {
         width: 50vw;
@@ -335,11 +367,19 @@ input[type=text], input[type=email], input[type=password] {
     .signup-form {
         width: 80vw;
     }
+
+    .modal-content {
+        width: 55vw;
+    }
 }
 
 @media screen and (max-width: 768px){
     .login-form {
         width: 70vw;
         padding: 5vh 11vw;
+    }
+    
+    .modal-content {
+        width: 75vw;
     }
 }

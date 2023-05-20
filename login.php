@@ -30,7 +30,7 @@
     </nav>
 
     <div class="login-form">
-        <form action="./auth_cinemma.php" method="POST">
+        <form id="loginForm" action="./auth_cinemma.php" method="POST">
             <h2>Log In</h2>
             <hr>    
             <label for="mail">Email:</label><br>
@@ -42,6 +42,18 @@
             </div>
         </form>
     </div>
+
+    <div class="modal-container no-click" id="modalContainer">
+        <div class="modal-content no-click" id="modalContent">
+            <h3>Error with login</h3>
+            <p>Please enter your credentials correctly.</p>
+            <div>
+                <button type="button" class="btn" id="close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./login.js"></script>
     
 </body>
 </html>

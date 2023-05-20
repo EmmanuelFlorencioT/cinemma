@@ -7,6 +7,9 @@
 
     $stmt = mysqli_prepare($connection, "SELECT * FROM User WHERE email=? AND password=?");
     mysqli_stmt_bind_param($stmt, "ss", $em, $ps);
+
+    //Create a dictionary or associative array
+    $response = array('authenticated' => false);
     
     try{
         mysqli_stmt_execute($stmt);
@@ -14,11 +17,16 @@
         if(mysqli_stmt_fetch($stmt)){ //The DB found a match
             $_SESSION['logged_in'] = true;
             $_SESSION['username'] = $name;
-            header("Location: http://localhost:5002/index.php");
+
+            $response['authenticated'] = true;
         } else {
-            echo "User not found!";
+            $response['errorMessage'] = "Invalid Credentials!";
         }
     } catch(Exception $e){
-        echo "There was a problem with the execution".$e;
+        $response['errorMessage'] = $e->getMessage();
     }
+
+    //Send a JSON file as a response for the authentication request
+    header("Content-Type: application/json");
+    echo json_encode($response);
 ?>
