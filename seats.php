@@ -37,12 +37,12 @@
       <div class="seat-array">
         <div class="screen">screen</div>
         <?php 
-          $rows = array("A", "B", "C", "D", "E", "F");
+          $rows = array("A", "B", "C", "D", "E");
           
           foreach($rows as $row){
             echo "<div class='seat-row'>";
               for($i = 1; $i < 7; $i++){
-                echo "<div class='seat' id='" .$row.$i. "'><p class='seat-label'>" .$row.$i. "</p></div>";
+                echo "<div class='seat' id='" .$row.$i. "' onclick=occupySeat(this)><img src='./assets/armchair.png' alt='Seat'><div class='seat-id-overlay'><p>" .$row.$i. "</p></div></div>";
               }
             echo "</div>";
           }
@@ -59,5 +59,7 @@
       </div>  
 
     </footer>
+
+    <script src="./seats.js"></script>
 </body>
 </html>

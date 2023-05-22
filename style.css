@@ -249,16 +249,31 @@ body {
 .seat{
     width: 100%;
     height: 100%;
-    /* background-color: blue; */
-    text-align: center;
     margin: 0 3px;
-    background-image: url(./assets/chair.png);
-    background-size: 100% auto;
-    border-radius: 30%;
+    position: relative;
 }
 
-.seat-label{
-    font-weight: 600;
+.seat:hover {
+    cursor: pointer;
+}
+
+.seat img {
+    width: 100%;
+    height: auto;
+}
+
+.seat-id-overlay{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 20px; /*The overlay div is as big as the parent container*/
+    display: flex; /*This is the property to change to hide the id*/
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: #de2d40;
+}
+
+.seat-id-overlay p {
+    margin: 0;
 }
 
 @media screen and (max-width: 768px){
@@ -274,6 +289,11 @@ body {
     .screen{
         height: 10px;
         margin-bottom: 20px;
+    }
+
+    .seat-id-overlay{
+        bottom: 15px;
+        font-size: 12px;
     }
 }
 
