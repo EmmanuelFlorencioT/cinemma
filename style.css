@@ -177,7 +177,19 @@ body {
 }
 
 .movie-times {
-    padding-top: 15px;
+    padding: 15px 0;
+}
+
+.movie-times .btn {
+    margin-right: 5px;
+}
+
+.movie-times .btn:hover {
+    padding: 10px 15px;
+}
+
+.movie-times p {
+    margin: 0;
 }
 
 @media screen and (max-width: 992px){
