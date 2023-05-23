@@ -75,8 +75,8 @@
   
           <div class="container-fluid movie-times">
             <?php 
-              foreach($start_times as $func){
-                echo "<div class='btn' onclick=window.location.href='./seats.php?id=".$movie['id']."&time=".$func."'><p>".$func."</p></div>";
+              foreach($screenings as $func){
+                echo "<div class='btn' onclick=window.location.href='./seats.php?id=".$movie['id']."&time=".$func['start_time']."&screening=".$func['screening_id']."'><p>".$func['start_time']."</p></div>";
               }
             ?>
           </div>
