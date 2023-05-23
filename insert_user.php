@@ -1,6 +1,6 @@
 <?php
     require_once "./connect_db.php";
-    require "./session_start.php";
+    require "./session.php";
 
     $name = $_POST['name'];
     $email = $_POST['mail'];
