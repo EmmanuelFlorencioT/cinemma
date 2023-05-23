@@ -74,6 +74,15 @@ body {
     margin-right: 1.5rem;
 }
 
+.movie-list-admin {
+    height: auto;
+    max-height: 80vh;
+    background-color: aquamarine;
+    overflow-y: scroll;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
 .movie {
     max-height: fit-content;
     color: white;
@@ -314,7 +323,7 @@ input[type=text], input[type=email], input[type=password] {
     border-radius: 15px;
 }
 
-.signup-btn-container {
+.btn-container {
     margin-top: 40px;
     margin-bottom: 30px;
     text-align: center;
@@ -401,5 +410,22 @@ input[type=text], input[type=email], input[type=password] {
     
     .modal-content {
         width: 75vw;
+    }
+}
+
+/* -- Admin-index page -- */
+.admin-intro {
+    padding-top: 15px;
+    padding-left: 25px;
+}
+
+/* -- Admin-movie page -- */
+.right-section form {
+    padding-left: 4%;
+}
+
+@media screen and (max-width: 992px){
+    .right-section form {
+        padding-left: 0;
     }
 }

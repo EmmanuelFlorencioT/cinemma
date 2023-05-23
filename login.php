@@ -37,7 +37,7 @@
             <input type="email" name="mail" id="mail" required><br><br>
             <label for="psswd">Password:</label><br>
             <input type="password" name="psswd" id="psswd" required><br>
-            <div class="signup-btn-container">
+            <div class="btn-container">
                 <button class="btn" type="submit">Log In</button>
             </div>
         </form>

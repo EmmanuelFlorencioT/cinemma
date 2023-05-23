@@ -14,7 +14,9 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     })
     .then((response) => response.json()) //Wait for the auth_cinemma response
     .then((respData) => {
-        if(respData.authenticated){
+        if(respData.adminIn){
+            window.location.href = './admin-index.php';
+        } else if(respData.userIn){
             window.location.href = './index.php';
         } else {
             console.log('Authentication failed');
