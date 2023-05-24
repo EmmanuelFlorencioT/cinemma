@@ -1,5 +1,6 @@
 <?php
   require_once './search_movie.php';
+  require_once './search_screenings.php';
   require "./session.php";
 
   $movie = json_decode($movieInfo, true);
@@ -20,7 +21,7 @@
     <nav class="navbar bg-danger" data-bs-theme="dark">
         <div class="container-fluid">
           <!--Placeholder for the logo image-->
-          <a class="navbar-brand" href="index.php">
+          <a class="navbar-brand" href="admin-index.php">
             <img src="./assets/mocklogo-cinemma.png" alt="Logo" width="28" height="28" class="d-inline-block align-text-top">
             <span id="nav-cinemma">Cinemma</span>
           </a>
@@ -50,23 +51,45 @@
         </div>
   
         <div class="col-lg-8 right-section">
-            <form action="./insert_screening.php?id=<?php echo $_GET['id'] ?>" method="POST">
-              <h1><?php echo $movie['original_title']; ?></h1>
-              <h4>Movie ID: <?php echo $_GET['id'] ?></h4>
-              <hr>
+          <h3><?php echo $movie['original_title']; ?></h3>
+          <h4>Movie ID: <?php echo $movie['id'] ?></h4>
 
-              <label for="">Starting time:</label>
-              <input type="text" name="time" id="start-time" required><br><br>
+          <form class="mt-4" action="./insert_screening.php?id=<?php echo $movie['id'] ?>" method="POST">
+            <h5>Add a Screening</h5>
+            <hr>
 
-              <label for="">Theatre Number:</label>
-              <input type="text" name="theatre" id="theatre-num" required><br><br>
-
-              <div class="btn-container">
-                <button class="btn" type="submit">Submit Screening</button>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="">Starting time:</label>
+                <input type="text" name="time" id="start-time" required>
               </div>
-            </form>
 
-  
+              <div class="col-md-6">
+                <label for="">Theatre Number:</label>
+                <input type="text" name="theatre" id="theatre-num" required>
+              </div>
+            </div>
+
+            <div class="btn-screening">
+              <button class="btn" type="submit">Submit Screening</button>
+            </div>
+          </form>
+
+          <div class="container-fluid movie-times mt-3">
+            <h5>Remove a Screening</h5>
+            <hr>
+            <?php 
+              foreach($screenings as $func){
+                echo "<div class='btn' onclick=selectTime(this)><p data-screen='".$func['screening_id']."'>".$func['start_time']."</p></div>";
+              }
+            ?>
+          </div>
+
+          <div class="btn-screening">
+            <button class="btn" onclick=removeTime()>Remove Screening</button>
+          </div>
+
+
         </div>
       </div>
     </div>
@@ -79,6 +102,8 @@
         <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
       </div>  
     </footer>
+
+    <script src="./admin-movie.js"></script>
 
 </body>
 </html>

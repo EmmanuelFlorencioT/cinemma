@@ -13,7 +13,7 @@
     mysqli_stmt_close($stmt);
 
     if($q_status){
-        header("Location: http://localhost:5002/admin-index.php");
+        header("Location: http://localhost:5002/admin-movie.php?id=".$movieID);
     } else {
         header("Location: http://localhost:5002/admin-movie.php?id=".$movieID."&error=Error creating the screening"); 
     }

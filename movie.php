@@ -1,6 +1,6 @@
 <?php
   require_once './search_movie.php';
-  require_once './search_screenings.php';
+  require './search_screenings.php';
   require "./session.php";
 
   $movie = json_decode($movieInfo, true);
@@ -74,9 +74,14 @@
           <p><span class="movie-attrib">Duration: </span><?php echo $movie['runtime']; ?> mins</p>
   
           <div class="container-fluid movie-times">
-            <?php 
+            <?php
               foreach($screenings as $func){
-                echo "<div class='btn' onclick=window.location.href='./seats.php?id=".$movie['id']."&time=".$func['start_time']."&screening=".$func['screening_id']."'><p>".$func['start_time']."</p></div>";
+                if(isLoggedIn()){
+                  $redirectUrl = "./seats.php?id=".$movie['id']."&time=".$func['start_time']."&screening=".$func['screening_id'];
+                } else {
+                  $redirectUrl = "./login.php";
+                }
+                echo "<div class='btn' onclick=window.location.href='".$redirectUrl."'><p>".$func['start_time']."</p></div>";
               }
             ?>
           </div>

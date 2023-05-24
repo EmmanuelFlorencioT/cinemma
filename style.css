@@ -432,12 +432,20 @@ input[type=text], input[type=email], input[type=password] {
 }
 
 /* -- Admin-movie page -- */
-.right-section form {
-    padding-left: 4%;
+
+.btn-screening {
+    padding-top: 10px;
+    text-align: center;
 }
 
-@media screen and (max-width: 992px){
-    .right-section form {
-        padding-left: 0;
-    }
+.btn-selected{
+    color: #000000;
+    background-color: #e8dedf;
+    border: solid #e8dedf 2px;
+    cursor: pointer;
+}
+.btn-selected:hover{
+    transition : 500ms;
+    color: #e8dedf;
+    border: solid 2px #e8dedf;
 }
