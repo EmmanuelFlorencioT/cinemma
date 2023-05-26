@@ -42,9 +42,9 @@
                 </div>
                 <div class="col-md-6">
                     <label for="psswd">Password:</label><br>
-                    <input type="password" name="psswd" id="psswd" required><br>
+                    <input type="password" name="psswd" id="psswd" required minlength="8"><br>
                     <label for="conf-psswd">Confirm Password:</label><br>
-                    <input type="password" name="conf-psswd" id="conf-psswd" required>
+                    <input type="password" name="conf-psswd" id="conf-psswd" required minlength="8">
                 </div>
             </div>
 
@@ -62,7 +62,7 @@
                     <input type="password" name="card-cvc" id="card-cvc" maxlength="4" required><br>
                 </div>
             </div>
-            <div class="signup-btn-container">
+            <div class="btn-container">
                 <button class="btn" type="submit">Sign Up</button>
             </div>
         </form>

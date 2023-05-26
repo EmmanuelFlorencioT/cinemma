@@ -7,4 +7,11 @@
         }
         return false;
     }
+
+    function isAdmin(){
+        if(isset($_SESSION['admin_id']) && $_SESSION['admin_id'] > 0){
+            return true;
+        }
+        return false;
+    }
 ?>

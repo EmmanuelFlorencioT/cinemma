@@ -33,7 +33,8 @@
               <div class="dropdown-content">
                 <?php
                   if(isLoggedIn()){
-                    echo "<a href='./logout.php'>Log Out</a>";
+                    echo "<a href='./update-profile.php'>Account</a>
+                          <a href='./logout.php'>Log Out</a>";
                   } else {
                     echo "<a href='./login.php'>Log In</a>
                           <a href='./signup.php'>Sign Up</a>";
