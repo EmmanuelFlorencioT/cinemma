@@ -14,6 +14,8 @@
 
     //Check for the form submission with POST method
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $response = array('Message' => 'Update still not done');
+
         $name = $_POST['name'];
         $email = $_POST['mail'];
         $card_num = $_POST['card-number'];
@@ -44,10 +46,12 @@
         mysqli_execute($update_stmt);
 
         if(mysqli_stmt_affected_rows($update_stmt) > 0){
+            $response['Message'] = 'Update successful';
             $_SESSION['email'] = $email;
             $_SESSION['username'] = $name;
 
-            header("Location: http://localhost:5002/index.php");
+            header("Content-Type: application/json");
+            echo json_encode($response);
             exit();
         }
 

@@ -67,7 +67,7 @@ body {
 
 .movie-list {
     height: auto;
-    max-height: 55vh;
+    max-height: 65vh;
     background-color: aquamarine;
     overflow-y: scroll;
     margin-left: 1.5rem;

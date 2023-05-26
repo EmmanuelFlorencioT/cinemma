@@ -43,7 +43,7 @@
     </nav>
     
     <div class="signup-form">
-        <form action="" method="POST">
+        <form id="updateForm" action="./modify_user.php" method="POST">
             <h2>Account Settings</h2>
             <hr>
 
@@ -74,9 +74,23 @@
             </div>
 
             <div class="btn-container">
-                <button class="btn" type="submit">Update</button>
+                <button class="btn" type="button" id="update-btn">Update</button>
             </div>
-        </form>
-    </div>
-</body>
+        </form>  
+      </div>
+
+      <div class="modal-container no-click" id="updtModalContainer">
+        <div class="modal-content no-click" id="updtModalContent">
+            <h3>Are you sure you want to continue?</h3>
+            <p>Verify the data is correct. All the changes will take effect immediately.</p>
+
+            <div>
+                <div type="button" class="btn" id="confirm">Confirm</div>
+                <div type="button" class="btn" id="cancel">Cancel</div>
+            </div>
+        </div>
+      </div>
+
+      <script src="./update-profile.js"></script>
+    </body>
 </html>
