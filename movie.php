@@ -1,6 +1,6 @@
 <?php
   require_once './search_movie.php';
-  require './search_screenings.php';
+  require_once './search_screenings.php';
   require "./session.php";
 
   $movie = json_decode($movieInfo, true);
@@ -78,7 +78,7 @@
             <?php
               foreach($screenings as $func){
                 if(isLoggedIn()){
-                  $redirectUrl = "./seats.php?id=".$movie['id']."&time=".$func['start_time']."&screening=".$func['screening_id'];
+                  $redirectUrl = "./seats.php?id=".$movie['id']."&time=".$func['start_time']."&screening=".$func['screening_id']."&screen=".$func['screen'];
                 } else {
                   $redirectUrl = "./login.php";
                 }
