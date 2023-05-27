@@ -45,8 +45,8 @@
     </nav>
 
     <div class="container-fluid flex-column movie-overview pt-4">
-        <div class="container latest-movie">
-          Latest Movie
+        <div class="container-md latest-movie">
+          <img class="banner" src="./assets/cinema-banner1.jpg" alt="Cinemma Banner">
         </div>
 
         <div class="row mt-4 movie-list text-center">
