@@ -7,6 +7,7 @@ let numSeatsElement = document.getElementById('num-seats');
 let numSeats = 0;
 
 let totalPrice = document.getElementById('total-price');
+let ticketsPrice = 0;
 
 document.getElementById('add-seat').addEventListener('click', function() {
     if(numSeats + 1 > maxSeats){
@@ -15,7 +16,8 @@ document.getElementById('add-seat').addEventListener('click', function() {
     
     numSeats++;
     numSeatsElement.innerText = numSeats;
-    totalPrice.innerHTML = "$ " + (numSeats * 11.75);
+    ticketsPrice = (numSeats * 12);
+    totalPrice.innerHTML = "$ " + ticketsPrice;
     
     if(selectedSeats.length === 0){
         seatsToSelect = numSeats;
@@ -31,7 +33,8 @@ document.getElementById('sub-seat').addEventListener('click', function() {
 
     numSeats--;
     numSeatsElement.innerHTML = numSeats;
-    totalPrice.innerHTML = "$ " + (numSeats * 11.75);
+    ticketsPrice = (numSeats * 12);
+    totalPrice.innerHTML = "$ " + ticketsPrice;
 
     if(selectedSeats.length > numSeats){
         occupySeat(document.getElementById(selectedSeats.slice(-1)));
@@ -76,10 +79,18 @@ document.getElementById('confirm-seats-btn').addEventListener('click', function(
         return;
     }
 
+    const currentDate = new Date();
+    var year = currentDate.getFullYear();
+    var month = currentDate.getMonth() + 1; //Months are zero-indexed
+    var day = currentDate.getDate();
+    var formattedDate = day + ' / ' + month + ' / ' + year;
+
     seatsInfo = {
         'screeningID': screeningID,
         'startTime': startTime,
-        'seats': selectedSeats
+        'seats': selectedSeats,
+        'price': ticketsPrice,
+        'purchaseDate': formattedDate 
     };
 
     fetch('./insert_seats.php', {
