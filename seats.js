@@ -103,7 +103,7 @@ document.getElementById('confirm-seats-btn').addEventListener('click', function(
     .then((response) => response.json())
     .then((respMssg) => {
         if(respMssg.wasReceived){
-            location.window.href = './index.php';
+            location.href = './index.php';
         } else {
             console.log('Data Not Recevied!');
         }
